@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-
+# Restaurant.destroy_all
 puts 'Creating 100 fake restaurants...'
 50.times do
   restaurant = Restaurant.new(
@@ -16,5 +16,10 @@ puts 'Creating 100 fake restaurants...'
     phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
   restaurant.save!
+  review = Review.new( content: "blah",
+    rating: 5)
+  review.restaurant = restaurant
+  review.save!
 end
 puts 'Finished!'
+
