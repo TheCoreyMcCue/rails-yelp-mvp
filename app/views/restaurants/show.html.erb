@@ -1,4 +1,7 @@
+<div class="container card">
 <p><%= @restaurant.name %></p>
 <p><%= @restaurant.address %> </p>
 <p><%= @restaurant.category %> </p>
-
+<p><%= @restaurant.phone_number %> </p>
+<p> <%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?"}  %> </p>
+</div>

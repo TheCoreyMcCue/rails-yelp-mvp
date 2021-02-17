@@ -12,8 +12,8 @@ puts 'Creating 100 fake restaurants...'
   restaurant = Restaurant.new(
     name:    Faker::Company.name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    category: %w(chinese italian japanese french belgian).sample,
-    phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+    category: ['American', 'Italian', 'Dutch', 'Greek', 'French', 'Turkish'].sample,
+    phone_number: Faker::PhoneNumber.phone_number_with_country_code
   )
   restaurant.save!
 end
